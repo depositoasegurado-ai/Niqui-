@@ -11,88 +11,104 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Inter', sans-serif;
+    font-family:'Inter',sans-serif;
 }
 
 body{
-    background: linear-gradient(135deg,#3a0047,#6a0dad);
-    height:100vh;
+    background:#3a0047;
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+    height:100vh;
 }
 
 .app{
     width:360px;
-    background:#fff;
-    border-radius:25px;
-    padding:25px;
-    box-shadow:0 20px 50px rgba(0,0,0,0.3);
+    height:740px;
+    background:#4b0066;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,0.4);
+    position:relative;
 }
 
-.logo{
-    text-align:center;
-    font-size:28px;
+.header{
+    padding:30px 20px;
+    color:white;
+}
+
+.header h2{
+    font-size:18px;
+    font-weight:500;
+    opacity:0.9;
+}
+
+.header h1{
+    font-size:24px;
     font-weight:700;
-    color:#6a0dad;
-    margin-bottom:20px;
-}
-
-.balance-card{
-    background:linear-gradient(135deg,#6a0dad,#9b30ff);
-    color:#fff;
-    padding:20px;
-    border-radius:20px;
-    margin-bottom:25px;
-}
-
-.balance-card h3{
-    font-weight:400;
-    font-size:14px;
-    opacity:0.8;
-}
-
-.balance-card h1{
-    font-size:28px;
     margin-top:5px;
 }
 
-.user{
-    margin-bottom:20px;
+.balance-card{
+    background:white;
+    margin:0 20px;
+    padding:20px;
+    border-radius:20px;
+    margin-top:10px;
 }
 
-.user span{
-    font-weight:600;
-    color:#6a0dad;
+.balance-card p{
+    font-size:14px;
+    color:#777;
 }
 
-.buttons{
+.balance-card h3{
+    font-size:28px;
+    margin-top:8px;
+    color:#4b0066;
+}
+
+.actions{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(3,1fr);
     gap:15px;
+    padding:30px 20px;
 }
 
-button{
+.action{
+    background:white;
     padding:15px;
-    border:none;
     border-radius:15px;
-    font-weight:600;
+    text-align:center;
+    font-size:14px;
+    font-weight:500;
+    color:#4b0066;
     cursor:pointer;
-    transition:0.3s;
+    transition:0.2s;
 }
 
-.primary{
-    background:#6a0dad;
-    color:#fff;
-}
-
-.secondary{
-    background:#eee;
-    color:#333;
-}
-
-button:hover{
+.action:hover{
     transform:scale(1.05);
+}
+
+.bottom-nav{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background:white;
+    display:flex;
+    justify-content:space-around;
+    padding:15px 0;
+}
+
+.bottom-nav div{
+    font-size:13px;
+    font-weight:600;
+    color:#777;
+}
+
+.bottom-nav .active{
+    color:#4b0066;
 }
 </style>
 </head>
@@ -101,23 +117,30 @@ button:hover{
 
 <div class="app">
 
-<div class="logo">NIQUI</div>
+    <div class="header">
+        <h2>Hola,</h2>
+        <h1>Usuario NIQUI</h1>
+    </div>
 
-<div class="balance-card">
-    <h3>Saldo disponible</h3>
-    <h1>$ 2.450.000</h1>
-</div>
+    <div class="balance-card">
+        <p>Saldo disponible</p>
+        <h3>$ 1.250.000</h3>
+    </div>
 
-<div class="user">
-    Usuario: <span>Juan Perez</span>
-</div>
+    <div class="actions">
+        <div class="action">Enviar</div>
+        <div class="action">Recargar</div>
+        <div class="action">Retirar</div>
+        <div class="action">Servicios</div>
+        <div class="action">Transferir</div>
+        <div class="action">Historial</div>
+    </div>
 
-<div class="buttons">
-    <button class="primary">Enviar</button>
-    <button class="secondary">Recargar</button>
-    <button class="secondary">Movimientos</button>
-    <button class="primary">Retirar</button>
-</div>
+    <div class="bottom-nav">
+        <div class="active">Inicio</div>
+        <div>Tarjeta</div>
+        <div>Perfil</div>
+    </div>
 
 </div>
 
